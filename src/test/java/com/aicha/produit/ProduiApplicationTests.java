@@ -16,11 +16,14 @@ class ProduiApplicationTests {
 	@Autowired
 	private ProduitRepository produitRepository;
 	@Test
+	void contextLoads() {
+		
+	}
+	@Test
 	public void testCreateProduit() {
 	Produit prod = new Produit("PC Dell",2200.500,new Date(0));
 	produitRepository.save(prod);
 	}
-	
 	@Test
 	public void testFindProduit()
 	{
@@ -28,13 +31,12 @@ class ProduiApplicationTests {
 
 	System.out.println(p);
 	}
-	
-	@Test 
-	public void testUpdateProduit ()
+	@Test
+	public void testUpdateProduit()
 	{
-		Produit p = produitRepository.findById(1L).get();
-		p.setPrixProduit(1000.0);
-		produitRepository.save(p);
+	Produit p = produitRepository.findById(1L).get();
+	p.setPrixProduit(1000.0);
+	produitRepository.save(p);
 	}
 	@Test
 	public void testDeleteProduit()
@@ -51,4 +53,5 @@ class ProduiApplicationTests {
 	}
 
 	}
+	
 }
